@@ -53,8 +53,12 @@ if (heracles.isAlive()) {
 div.className = "win";
 main.appendChild(div);
 
-document.querySelector(".heracles img").src = `assets/images/${heracles.image}`;
-document.querySelector(".monster img").src = `assets/images/${boar.image}`;
+document.querySelector(".heracles img").src = `assets/images/${
+  heracles.image ?? "fighter.svg"
+}`;
+document.querySelector(".monster img").src = `assets/images/${
+  boar.image ?? "fighter.svg"
+}`;
 
 document.querySelector("#hero").innerHTML = `
   <a href="#" class="close">
@@ -104,7 +108,9 @@ document.querySelector("#hero").innerHTML = `
   <div class="character">
     <h2 class="name">${heracles.name}</h2>
     <div class="avatar">
-      <img src="${heracles.image}" alt="heracles" />
+      <img src="assets/images/${
+        heracles.image ?? "fighter.svg"
+      }" alt="heracles" />
     </div>
     <p class="level">Level 1</p>
   </div>
