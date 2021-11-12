@@ -6,15 +6,14 @@ const nemeanLion = new Fighter("🦁 Lion de Némée", 11, 13);
 let round = 1;
 
 while (heracles.isAlive() && nemeanLion.isAlive()) {
-  console.log(`🕛 Round #${round}`);
-
   heracles.fight(nemeanLion);
+  nemeanLion.fight(heracles);
+
+  console.log(`🕛 Round #${round}`);
   console.log(
     `${heracles.name} 🗡️  ${nemeanLion.name}`,
     `💙 ${nemeanLion.name}: ${nemeanLion.life}`
   );
-
-  nemeanLion.fight(heracles);
   console.log(
     `${nemeanLion.name} 🗡️  ${heracles.name}`,
     `💙 ${heracles.name}: ${heracles.life}`

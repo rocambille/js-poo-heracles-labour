@@ -21,9 +21,6 @@ while (heracles.isAlive() && boar.isAlive()) {
   boar.fight(heracles);
 
   const section = document.createElement("section");
-  section.className = "round";
-  main.appendChild(section);
-
   section.innerHTML = `
     <h2 class="number">Round ${round}</h2>
     <div class="life">
@@ -33,13 +30,13 @@ while (heracles.isAlive() && boar.isAlive()) {
       <div>${boar.life}</div>
     </div>
   `;
+  section.className = "round";
+  main.appendChild(section);
 
   round++;
 }
 
 const div = document.createElement("div");
-div.className = "win";
-main.appendChild(div);
 
 if (heracles.isAlive()) {
   div.innerHTML = `
@@ -52,6 +49,9 @@ if (heracles.isAlive()) {
     <p>🏆 ${boar.name} wins (💙 ${boar.life})</p>
   `;
 }
+
+div.className = "win";
+main.appendChild(div);
 
 document.querySelector(".heracles img").src = `assets/images/${heracles.image}`;
 document.querySelector(".monster img").src = `assets/images/${boar.image}`;
@@ -75,14 +75,14 @@ document.querySelector("#hero").innerHTML = `
     <div data-slot="Main weapon" class="slot">
       ${
         heracles.weapon?.image
-          ? `<img src="assets/images/${heracles.weapon?.image}" alt="weapon" />`
+          ? `<img src="assets/images/${heracles.weapon.image}" alt="weapon" />`
           : ""
       }
     </div>
     <div data-slot="Shield" class="slot">
       ${
         heracles.shield?.image
-          ? `<img src="assets/images/${heracles.shield?.image}" alt="shield" />`
+          ? `<img src="assets/images/${heracles.shield.image}" alt="shield" />`
           : ""
       }
     </div>

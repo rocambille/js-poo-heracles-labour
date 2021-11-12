@@ -1,7 +1,7 @@
-const rollDice = (max) => 1 + Math.floor(Math.random() * max);
-
 class Fighter {
   static MAX_LIFE = 100;
+
+  static rollDice = (max) => 1 + Math.floor(Math.random() * max);
 
   life = Fighter.MAX_LIFE;
 
@@ -13,7 +13,10 @@ class Fighter {
   }
 
   fight(opponent) {
-    const damage = Math.max(rollDice(this.damage) - opponent.defense, 0);
+    const damage = Math.max(
+      Fighter.rollDice(this.damage) - opponent.defense,
+      0
+    );
 
     opponent.life = Math.max(opponent.life - damage, 0);
   }
