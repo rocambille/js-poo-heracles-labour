@@ -2,6 +2,8 @@ import Fighter from "./Fighter.js";
 import Weapon from "./Weapon.js";
 import Shield from "./Shield.js";
 
+/** ✅ START OF THE PART TO MODIFY ✅ **/
+
 const heracles = new Fighter("Héraclès", 20, 6, "heracles.svg");
 
 const sword = new Weapon();
@@ -11,6 +13,9 @@ const shield = new Shield();
 heracles.shield = shield;
 
 const boar = new Fighter("Erymanthian Boar", 25, 12, "boar.svg");
+
+/** END OF THE PART TO MODIFY **/
+/** ⛔ Don't touch the code below ⛔ **/
 
 const main = document.querySelector("main");
 
